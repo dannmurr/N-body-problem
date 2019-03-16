@@ -13,7 +13,7 @@ public class ParallelNbody {
 
     int gnumBodies = 120;
     int numSteps = 275000;
-    int numWorkers = 10;
+    int numWorkers = 3;
 
     double massOfBodies = 10;
     double DT = 1;
@@ -103,9 +103,9 @@ public class ParallelNbody {
 
             if (id == 0) {
                 for (int i = 0; i < 5; i++) {
-                    start = System.nanoTime();
                     System.out.println("body " + i + " at " + work.points[i].posX);
                 }
+                start = System.nanoTime();
             }
 
             for (int i = 0; i < work.numSteps; i++) {
@@ -119,7 +119,7 @@ public class ParallelNbody {
                     System.out.println("body " + i + " at " + work.points[i].posX);
                 }
                 end = System.nanoTime() - start;
-                System.out.println("total execution time: " + end*Math.pow(10, -9) + " seconds");
+                System.out.println("total execution time: " + end * Math.pow(10, -9) + " seconds");
             }
 
         }
