@@ -42,7 +42,7 @@ public class BHTree {
         }
     }
 
-    private void insertPoint(Point p) {
+    public void insertPoint(Point p) {
         if (point == null) {
             point = p;
             return;

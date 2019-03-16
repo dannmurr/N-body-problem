@@ -29,7 +29,7 @@ public class Point {
 
     }
 
-    public void update(){
+    public void movePoint(){
         
     }
     
