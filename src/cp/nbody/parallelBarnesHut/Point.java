@@ -25,6 +25,9 @@ public class Point {
         this.posY = posY;
         this.velX = velX;
         this.velY = velY;
+        
+        this.forcesX = new double[numWorkers];
+        this.forcesY = new double[numWorkers];
         for (int i = 0; i < numWorkers; i++) {
             this.forcesX[i] = forceX;
             this.forcesY[i] = forceY;

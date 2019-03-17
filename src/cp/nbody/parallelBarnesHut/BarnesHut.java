@@ -24,8 +24,6 @@ public class BarnesHut {
 
         double massOfBodies = 10;
 
-        maxlength = points[gnumBodies - 1].posX + 7;
-
         points = new Point[gnumBodies];
 
         barrier = new CyclicBarrier(numWorkers);
@@ -37,6 +35,7 @@ public class BarnesHut {
                     10 * (i / (int) Math.sqrt(gnumBodies)) + r.nextDouble() * 7, 0, 0, 0, 0, massOfBodies, numWorkers);
         }
 
+        maxlength = points[gnumBodies - 1].posX + 7;
     }
 
     public void barrier(int w) {
