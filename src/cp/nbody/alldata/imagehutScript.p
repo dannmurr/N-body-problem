@@ -11,7 +11,7 @@ set xlabel "Number of threads"
 set ylabel "Time in s"
 
 set xrange [1:4]
-set yrange [0:5]
+set yrange [0:10]
 
 plot "phut120.dat" u 1:2 w linespoints title "Parallel NlogN 120", \
      "shut120.dat" u 1:2 w linespoints title "Sequential NlogN 120", \
