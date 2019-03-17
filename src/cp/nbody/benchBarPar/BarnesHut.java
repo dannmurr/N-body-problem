@@ -65,7 +65,7 @@ public class BarnesHut {
 
             if (id == 0) {
                 for (int i = 0; i < 5; i++) {
-                    System.out.println("body " + i + " at " + work.points[i].posX);
+                    // System.out.println("body " + i + " at " + work.points[i].posX);
                 }
                 start = System.nanoTime();
             }
@@ -98,10 +98,10 @@ public class BarnesHut {
             }
             if (id == 0) {
                 for (int i = 0; i < 5; i++) {
-                    System.out.println("body " + i + " at " + work.points[i].posX);
+                    // System.out.println("body " + i + " at " + work.points[i].posX);
                 }
                 end = System.nanoTime() - start;
-                System.out.println("total execution time: " + end * Math.pow(10, -9) + " seconds");
+                System.out.println(end * Math.pow(10, -9));
             }
 
         }

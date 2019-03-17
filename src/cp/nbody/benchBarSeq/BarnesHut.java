@@ -29,7 +29,7 @@ public class BarnesHut {
 
         //print five first points to track
         for (int i = 0; i < 5; i++) {
-            System.out.println("body " + i + " at " + points[i].posX);
+            // System.out.println("body " + i + " at " + points[i].posX);
         }
 
         long start = System.nanoTime();
@@ -53,10 +53,10 @@ public class BarnesHut {
         long end = System.nanoTime() - start;
 
         for (int i = 0; i < 5; i++) {
-            System.out.println("body " + i + " at " + points[i].posX);
+            // System.out.println("body " + i + " at " + points[i].posX);
         }
 
-        System.out.println("Total execution time: " + end * Math.pow(10, -9) + " seconds");
+        System.out.println(end * Math.pow(10, -9));
 
     }
 }
