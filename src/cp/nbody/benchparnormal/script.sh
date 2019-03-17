@@ -1,4 +1,5 @@
 #!/bin/bash
+javac ParallelNbody.java Point.java
 
 java ParallelNbody 120 50000 1  >  data/bench120.dat
 java ParallelNbody 120 50000 2  >>  data/bench120.dat
