@@ -4,13 +4,14 @@ import java.util.Random;
 public class BarnesHut {
 
     public static void main(String[] args) {
+        int gnumBodies = Integer.parseInt(args[0]); // = 120;
+        int numSteps = Integer.parseInt(args[1]);// = 275000;
+        int nrworker = Integer.parseInt(args[2]);// 3;
+        double theta = 0.8; // this as arg?
 
         Point[] points;
         double G = 6.67e-11;
         double DT = 0.1;
-
-        int gnumBodies = 120;
-        int numSteps = 275000;
 
         double massOfBodies = 10;
 
@@ -25,7 +26,6 @@ public class BarnesHut {
 
         double maxlength = points[gnumBodies - 1].posX + 7;
 
-        double theta = 0.8;
 
         //print five first points to track
         for (int i = 0; i < 5; i++) {
