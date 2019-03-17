@@ -1,4 +1,4 @@
-package cp.nbody.program2;
+package cp.nbody.parallelNbody;
 
 import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
@@ -28,7 +28,7 @@ public class ParallelNbody {
 
         for (int i = 0; i < gnumBodies; i++) {
             points[i] = new Point((10 * (i % (int) Math.sqrt(gnumBodies))) + r.nextDouble() * 7,
-                    10 * (i / (int) Math.sqrt(gnumBodies)) + r.nextDouble() * 7, 0, 0, 0, 0, massOfBodies, gnumBodies);
+                    10 * (i / (int) Math.sqrt(gnumBodies)) + r.nextDouble() * 7, 0, 0, 0, 0, massOfBodies, numWorkers);
         }
     }
 

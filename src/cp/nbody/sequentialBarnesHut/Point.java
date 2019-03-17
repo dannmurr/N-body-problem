@@ -1,6 +1,9 @@
-package cp.nbody.program3;
+package cp.nbody.sequentialBarnesHut;
 
 public class Point {
+
+    double G = 6.67e-11;
+    double DT = 0.1;
 
     double posX;
     double posY;
@@ -25,16 +28,30 @@ public class Point {
         return q.contains(posX, posY);
     }
 
-    public void addForce(Point P) {
-
-    }
-
-    public void movePoint(){
+    public void addForce(Point p) {
+        double delX = p.posX - this.posX;
+        double delY = p.posY - this.posY;
+        double distance = this.distance(p);
         
+        if(distance > 1){
+            distance = 1;
+        }
+
+        double force = (G*this.mass*p.mass)/(distance*distance);
+        this.forceX += force*delX/distance;
+        this.forceY += force*delY/distance;
     }
-    
+
+    public void movePoint() {
+        velX += DT*forceX/mass; 
+        velY += DT*forceY/mass;
+        posX += DT * velX; 
+        posY += DT * velY;
+
+    }
+
     public double distance(Point p) {
-         return Math.sqrt(Math.pow((this.posX - p.posX), 2) + Math.pow((this.posY - p.posY), 2));
+        return Math.sqrt(Math.pow((this.posX - p.posX), 2) + Math.pow((this.posY - p.posY), 2));
     }
 
     public Point addMasses(Point p) {
@@ -42,7 +59,7 @@ public class Point {
 
         double m = a.mass + p.mass;
         double x = (a.posX * a.mass + p.posX * p.mass) / m;
-        double y = (a.posY * a.mass + p.posY *p.mass) / m;
+        double y = (a.posY * a.mass + p.posY * p.mass) / m;
 
         return new Point(x, y, a.velX, p.velY, 0, 0, m);
     }

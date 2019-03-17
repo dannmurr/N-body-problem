@@ -1,4 +1,4 @@
-package cp.nbody.program3;
+package cp.nbody.sequentialBarnesHut;
 
 public class BHTree {
 
@@ -11,8 +11,9 @@ public class BHTree {
 
     private double theta = 0.8;
 
-    public BHTree(Quad quad) {
+    public BHTree(Quad quad, double theta) {
         this.quad = quad;
+        this.theta = theta; 
     }
 
     //if all four quads is == NULL
@@ -52,10 +53,10 @@ public class BHTree {
             point = point.addMasses(p);
             putPoint(point);
         } else {
-            NW = new BHTree(quad.NW());
-            NE = new BHTree(quad.NE());
-            SE = new BHTree(quad.SE());
-            SW = new BHTree(quad.SW());
+            NW = new BHTree(quad.NW(), theta);
+            NE = new BHTree(quad.NE(), theta);
+            SE = new BHTree(quad.SE(), theta);
+            SW = new BHTree(quad.SW(), theta);
             putPoint(this.point);
             putPoint(p);
             point = point.addMasses(p);

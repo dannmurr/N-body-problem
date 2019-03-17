@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cp.nbody.program2;
+package cp.nbody.parallelNbody;
 
 public class Point {
 
@@ -15,15 +15,15 @@ public class Point {
     double[] forcesY;
     double mass;
 
-    public Point(double posX, double posY, double velX, double velY, double forcesX, double forcesY, double mass, int numBodies) {
+    public Point(double posX, double posY, double velX, double velY, double forcesX, double forcesY, double mass, int numWorkers) {
         this.posX = posX;
         this.posY = posY;
         this.velX = velX;
         this.velY = velY;
         
-        this.forcesX = new double [numBodies];
-        this.forcesY = new double [numBodies];
-        for(int i = 0; i < numBodies; i++){
+        this.forcesX = new double [numWorkers];
+        this.forcesY = new double [numWorkers];
+        for(int i = 0; i < numWorkers; i++){
             this.forcesX[i] = forcesX;
             this.forcesY[i] = forcesY;
         }
