@@ -19,10 +19,10 @@ public class BarnesHut {
 
     CyclicBarrier barrier;
 
-    public BarnesHut(int bodies, int steps, int numworkers) {
-        this.gnumBodies = bodies;
-        this.numSteps = steps;
-        this.numWorkers = numworkers;
+    public BarnesHut(int gnumBodies, int numSteps, int numWorkers) {
+        this.gnumBodies = gnumBodies;
+        this.numSteps = numSteps;
+        this.numWorkers = numWorkers;
         double massOfBodies = 10;
 
         maxlength = points[gnumBodies - 1].posX + 7;
