@@ -132,7 +132,7 @@ public class ParallelNbody {
     public static void main(String[] args) {
         int bodies = Integer.parseInt(args[0]); // = 120;
         int steps = Integer.parseInt(args[1]);// = 275000;
-        int nrworker = Integer.parseInt(args[3]);// 3;
+        int nrworker = Integer.parseInt(args[2]);// 3;
 
         ParallelNbody simulation = new ParallelNbody(bodies, steps, nrworker);
 
