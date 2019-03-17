@@ -25,7 +25,6 @@ public class BarnesHut {
         this.numWorkers = numWorkers;
         double massOfBodies = 10;
 
-        maxlength = points[gnumBodies - 1].posX + 7;
 
         points = new Point[gnumBodies];
 
@@ -37,6 +36,7 @@ public class BarnesHut {
             points[i] = new Point((10 * (i % (int) Math.sqrt(gnumBodies))) + r.nextDouble() * 7,
                     10 * (i / (int) Math.sqrt(gnumBodies)) + r.nextDouble() * 7, 0, 0, 0, 0, massOfBodies, numWorkers);
         }
+        maxlength = points[gnumBodies - 1].posX + 7;
 
     }
 
