@@ -11,16 +11,18 @@ public class BarnesHut {
     double G = 6.67e-11;
     double DT = 0.1;
 
-    int gnumBodies = 120;
-    int numSteps = 275000;
-    int numWorkers = 3;
+    int gnumBodies;// = 120;
+    int numSteps;// = 275000;
+    int numWorkers;// = 3;
     double maxlength;
-    double theta = 0.8;
+    double theta = 0.8; // could be an argument
 
     CyclicBarrier barrier;
 
-    public BarnesHut() {
-
+    public BarnesHut(int bodies, int steps, int numworkers) {
+        this.gnumBodies = bodies;
+        this.numSteps = steps;
+        this.numWorkers = numworkers;
         double massOfBodies = 10;
 
         maxlength = points[gnumBodies - 1].posX + 7;
@@ -109,8 +111,12 @@ public class BarnesHut {
     }
 
     public static void main(String[] args) {
+        int bodies = Integer.parseInt(args[0]); // = 120;
+        int steps = Integer.parseInt(args[1]);// = 275000;
+        int nrworkers = Integer.parseInt(args[2]);// 3;
+        double theta = 0.8; // this as arg?
 
-        BarnesHut simulation = new BarnesHut();
+        BarnesHut simulation = new BarnesHut(bodies, steps, nrworkers);
 
         for (int i = 0; i < simulation.numWorkers; i++) {
             Worker worker = new Worker(i, simulation);
